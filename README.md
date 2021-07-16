@@ -16,7 +16,7 @@
 <p>&nbsp</p>
 
 ## Demonstration
-
+![Note-Taker-Demo](https://user-images.githubusercontent.com/79537431/125953231-0935c997-97a1-4fb5-ac84-ffa0398f4b5c.gif)
 <p>&nbsp</p>
 
 ## Links
