@@ -20,20 +20,14 @@
 <p>&nbsp</p>
 
 ## Links
-- [Project Repository](#)
-- [Live Application Link](#)
+- [Project Repository](https://github.com/evperkinsjr/note-taker)
+- [Live Application Link](https://tranquil-stream-23779.herokuapp.com/)
 <p>&nbsp</p>
 
 ## Installation
 To install the required dependencies, run the following command:
   
-
-<p>&nbsp</p>
-
-## Tests
-To run tests, use the following command:
-
-
+npm i
 <p>&nbsp</p>
 
 ## License
