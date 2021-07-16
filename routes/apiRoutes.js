@@ -1,41 +1,44 @@
 // Dependencies
 const fs = require('fs');
+const express = require('express');
+const apiRouter = express.Router();
 const uuid = require('uuid');
 
 // API Routing
-module.exports = (app) => {
-    const noteList = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
 
-    // GET Requests
-    app.get('/api/notes', (req, res) => {
-        return res.json(noteList);
-    });
+const noteList = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
 
-    // POST Requests
-    app.post('/api/notes', (req, res) => {
-        
-        // Stores info
-        const newNote = req.body;
+// GET Requests
+apiRouter.get('/', (req, res) => {
+    return res.json(noteList);
+});
 
-        // Sets id property
-        newNote.id = uuid.v4();
+// POST Requests
+apiRouter.post('/', (req, res) => {
+    
+    // Stores info
+    const newNote = req.body;
 
-        // Adds note
-        noteList.push(newNote);
+    // Sets id property
+    newNote.id = uuid.v4();
 
-        // Returns notes
-        return res.json(noteList);
-    });
+    // Adds note
+    noteList.push(newNote);
 
-    // DELETE Requests
-    app.delete('api/notes/:id', (req, res) => {
-        
-        // find note
-        const deleteNote = noteList.find(note => note.id === req.params.id);
+    // Returns notes
+    return res.json(noteList);
+});
 
-        // delete note
-        noteList.splice(noteList.indexOf(deleteNote), 1);
+// DELETE Requests
+apiRouter.delete('/:id', (req, res) => {
+    
+    // find note
+    const deleteNote = noteList.find(note => note.id === req.params.id);
 
-        res.end('Note deleted');
-    });
-}
+    // delete note
+    noteList.splice(noteList.indexOf(deleteNote), 1);
+
+    res.end('Note deleted');
+});
+
+module.exports = apiRouter;
