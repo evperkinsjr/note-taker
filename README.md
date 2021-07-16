@@ -6,13 +6,12 @@
 * [Demonstration](#demonstration)
 * [Links](#links)
 * [Installation](#installation)
-* [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
 <p>&nbsp</p>
 
 ## Description
-.
+For this project, I used Express.js to build the back end of a note taking application allowing users can write, save, and delete notes. It saves and retrieves note data from a JSON file and is deployed on Heroku.
 <p>&nbsp</p>
 
 ## Demonstration
