@@ -13,8 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Router
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
+app.use('/', require('./routes/htmlRoutes'));
+app.use('/api/notes', require('./routes/apiRoutes'));
+
 
 // Starts the server to begin listening
 app.listen(PORT, () => {
